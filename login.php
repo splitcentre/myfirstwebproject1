@@ -3,35 +3,33 @@
 $is_invalid = false;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    
+
     $mysqli = require __DIR__ . "/database.php";
-    
+
     $sql = sprintf("SELECT * FROM user
                     WHERE email = '%s'",
                    $mysqli->real_escape_string($_POST["email"]));
-    
+
     $result = $mysqli->query($sql);
-    
+
     $user = $result->fetch_assoc();
-    
+
     if ($user) {
-        
-        if (password_verify($_POST["password"], $user["password_hash"])) {
-            
-            session_start();
-            
-            session_regenerate_id();
-            
-            $_SESSION["user_id"] = $user["id"];
-            
-            header("Location: index.php");
-            exit;
-        }
+
+        session_start();
+
+        session_regenerate_id();
+
+        $_SESSION["user_id"] = $user["id"];
+
+        header("Location: profile.php");
+        exit;
     }
-    
+
     $is_invalid = true;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,8 +72,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                           <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
                         </div>
                        <br>
-                        <button type="submit" class="btn btn-primary btn-sm text-light"><a href="profile.html" class="text-light">Login</a></button>
-                        <a href="register.html" class="float-right text-primary">Not a Member? Register</a>
+                       <input type="submit" name="submit" value="login now" class="form-btn">
+                        <a href="signup/register.html" class="float-right text-primary">Not a Member? Register</a>
                       </form>
                 </div>
             </div>

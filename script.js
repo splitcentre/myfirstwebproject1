@@ -60,3 +60,14 @@ function removeItem(event) {
   var itemContainer = event.target.parentNode;
   itemContainer.remove();
 }
+
+function redirectToProfile() {
+
+    var isLoggedIn = true; 
+    
+    if (isLoggedIn) {
+      window.location.href = 'profile.php'; 
+    } else {
+      window.location.href = 'login.php'; 
+    }
+  }

@@ -60,10 +60,10 @@ sup{
     font-size: 19px;
 }
 
-.carousel img{
+/* .carousel img{
     height: auto;
     border-radius: 10px;
-}
+} */
 #border-line{
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -210,10 +210,7 @@ footer .col-md-3 h5{
 a:hover{
     text-decoration: none !important;
 }
-a.nav-link {
-    color: black;
-  }
-  
+
 .nav-item .nav-link{
     padding: 0.5rem 8rem;
     text-align: center;
@@ -310,7 +307,7 @@ a.nav-link {
 #join{
     box-shadow: 3px 4px 12px 2px rgb(236, 236, 236);
     padding: 20px;
-    border-top: 5px solid rgb(0, 0, 0);
+    border-top: 5px solid rgb(255, 0, 0);
 }
 
 
@@ -340,6 +337,20 @@ background-color: #c4c2c2;
     box-shadow: 3px 4px 12px 2px rgb(236, 236, 236);
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -500,7 +511,6 @@ display: inline;
 
 }
 
-/* InnerPage starts */
 
 #productpage .row .col-md-5{
     margin-bottom: 3rem;
@@ -529,8 +539,12 @@ left: 29%;
 
     
 }
+
+
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
