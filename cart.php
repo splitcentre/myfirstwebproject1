@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
     <title>main menu</title>
 </head>
 <body>
@@ -87,19 +92,15 @@
             <div class="row mt-4">
                 <div class="col-md-3">
                   <div class="overlay"> 
-                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg" class="zoom-in figure-img img-fluid">
+                    <img src="image/eva13a.jpg" class="zoom-in figure-img img-fluid">
                    </div>
 
                 </div>
 
                 <div class="col-md-7">
-                    <h5 class="text-muted pt-2">Adidas Cool T-Shirt</h5>
-                    <p class="text-uppercase font-weight-light">SHIRT - BLUE</p>
-                    <div class="linespace mb-4">
-                    <p class="text-muted mt-4">Color : BLUE</p>
-                    <p class="text-muted">Size : M</p>
-                    </div>
-                    <button class="btn btn-sm text-muted text-uppercase"><i class="fas fa-trash-alt pr-2"></i>REMOVE ITEM</button>
+                    <h5 class="text-muted pt-2">Evangelion EVA UNIT 13</h5>
+                    <p class="text-uppercase font-weight-light">Model Kit</p>
+                    <button class="btn btn-sm text-muted text-uppercase"><i class="fas fa-trash-alt pr-2" onclick="removeItem(this)"></i>REMOVE ITEM</button>
                     &nbsp;
                     <button class="btn btn-sm text-muted text-uppercase"><i class="fas fa-heart pr-2"></i>ADD TO WISHLIST</button>
 
@@ -122,19 +123,15 @@
             <div class="row">
               <div class="col-md-3">
                 <div class="overlay"> 
-                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13a.jpg" class="zoom-in figure-img img-fluid">
+                  <img src="image/gundamjustice.jpg" class="zoom-in figure-img img-fluid">
                  </div>
 
               </div>
 
               <div class="col-md-7">
-                  <h5 class="text-muted pt-2">Red Hoodie</h5>
-                  <p class="text-uppercase font-weight-light">SHIRT - RED</p>
-                  <div class="linespace mb-4">
-                  <p class="text-muted mt-4">Color : RED</p>
-                  <p class="text-muted">Size : M</p>
-                  </div>
-                  <button class="btn btn-sm text-muted text-uppercase"><i class="fas fa-trash-alt pr-2"></i>REMOVE ITEM</button>
+                  <h5 class="text-muted pt-2">Gundam Metal Build Justice Gundam</h5>
+                  <p class="text-uppercase font-weight-light">Model Kit</p>
+                  <button class="btn btn-sm text-muted text-uppercase" onclick="removeItem(this)"><i class="fas fa-trash-alt pr-2"></i>REMOVE ITEM</button>
                   &nbsp;
                   <button class="btn btn-sm text-muted text-uppercase"><i class="fas fa-heart pr-2"></i>ADD TO WISHLIST</button>
 

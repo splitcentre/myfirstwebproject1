@@ -68,6 +68,7 @@ function redirectToProfile() {
     if (isLoggedIn) {
       window.location.href = 'profile.php'; 
     } else {
-      window.location.href = 'login.php'; 
+      window.location.href="signup.php"
+      window.location.href ='login.php'; 
     }
   }

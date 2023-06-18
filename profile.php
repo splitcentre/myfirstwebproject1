@@ -1,3 +1,27 @@
+<?php
+session_start();
+
+if (isset($_SESSION["user_name"])) {
+    $mysqli = require __DIR__ . "/database.php";
+
+    $email = $_SESSION["email"];
+    $sql = "SELECT user_name FROM user WHERE email = '$email'";
+    $result = $mysqli->query($sql);
+    
+    if ($result && $result->num_rows > 0) {
+        $user = $result->fetch_assoc()["user_name"];
+    } else {
+        $user = "Unknown";
+    }
+
+    header('location:login.php');
+} else {
+
+    header('location:login.php');
+    exit; 
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +57,7 @@
                   </div>
             </div>
             <div class="col-md-3 mt-2" id="icons">
-              <div style="cursor: pointer;" class="circle float-right" onclick="redirectToProfile();" data-toggle="tooltip" data-placement="top" title="LOGIN & SIGNUP">
+              <div style="cursor: pointer;" class="circle float-right" onclick="window.location.href='login.php'" data-toggle="tooltip" data-placement="top" title="LOGIN & SIGNUP">
                 <i class="fas fa-user text-primary"></i>
             </div>
               
@@ -43,42 +67,6 @@
         </div>
     </div>
     <hr>
-    <div class="container" style="height: 30px;">
-      <nav class="navbar navbar-expand-lg navbar-light" style="height: 30px;">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse pl-4" id="navbarNav">
-              <ul class="navbar-nav">
-                  <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown"
-                          role="button" aria-haspopup="true" aria-expanded="false">
-                          <span>≡ All Category</span>
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="#">Transformer</a>
-                          <a class="dropdown-item" href="#">Anime</a>
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="#">Evangelion</a>
-                          <a class="dropdown-item" href="#">Gundam</a>
-                      </div>
-                  </li>
-                  <li class="nav-item active">
-                      <a class="nav-link" href="bandai.html">Bandai <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item active">
-                      <a class="nav-link" href="hasbro.html">Hasbro</a>
-                  </li>
-                  <li class="nav-item active">
-                      <a class="nav-link" href="other.html">Other</a>
-                  </li>
-              </ul>
-          </div>
-      </nav>
-  </div>
-    <hr>
-
 
 
 <div class="container">
@@ -94,7 +82,7 @@
         <div class="tab-content bg-light pb-5" id="v-pills-tabContent">
           <div class="tab-pane fade show active p-3" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
             <img id="profilePic" src="https://icon-library.com/images/default-user-icon/default-user-icon-8.jpg" class="rounded-circle img-fluid">
-            &nbsp; &nbsp; <h5 class="d-inline-block">Neelesh D &nbsp;&nbsp;&nbsp;&nbsp;<small class="text-success"><i class="fas fa-pencil-alt"></i>&nbsp; Edit</small>&nbsp;&nbsp;&nbsp;&nbsp;<small class="text-danger"><i class="fas fa-times"></i>&nbsp; Remove</small></h5>
+            &nbsp; &nbsp; <h5 class="d-inline-block"><?php echo $user; ?></span></h1> &nbsp;&nbsp;&nbsp;&nbsp;<small class="text-success"><i class="fas fa-pencil-alt"></i>&nbsp; Edit</small>&nbsp;&nbsp;&nbsp;&nbsp;<small class="text-danger"><i class="fas fa-times"></i>&nbsp; Remove</small></h5>
 
             <br>
             <br>

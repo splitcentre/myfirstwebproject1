@@ -45,7 +45,7 @@ $stmt->bind_param("isss",
                   
 if ($stmt->execute()) {
 
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit;
     
 } else {
