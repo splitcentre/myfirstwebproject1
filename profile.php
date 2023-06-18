@@ -1,25 +1,30 @@
 <?php
 session_start();
 
-if (isset($_SESSION["user_name"])) {
-    $mysqli = require __DIR__ . "/database.php";
-
-    $email = $_SESSION["email"];
-    $sql = "SELECT user_name FROM user WHERE email = '$email'";
-    $result = $mysqli->query($sql);
-    
-    if ($result && $result->num_rows > 0) {
-        $user = $result->fetch_assoc()["user_name"];
-    } else {
-        $user = "Unknown";
-    }
-
-    header('location:login.php');
-} else {
-
-    header('location:login.php');
-    exit; 
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit;
 }
+
+$user_id = $_SESSION['user_id'];
+
+require_once 'database.php';
+
+$sql = "SELECT * FROM users WHERE id = $user_id";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) == 1) {
+    $row = mysqli_fetch_assoc($result);
+
+    $user_name = $row['user_name'];
+    $email = $row['email'];
+} else {
+    header('Location: login.php');
+    exit;
+}
+
+mysqli_close($conn);
+
 ?>
 
 <!DOCTYPE html>
@@ -72,49 +77,9 @@ if (isset($_SESSION["user_name"])) {
 <div class="container">
     <h2>My Account</h2>
     <br><br>
-    <div class="row rounded">
-      <div class="col-3 mb-4 mt-3 pt-4 pb-3 bg-light w-auto h-fit-content">
-        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-          <a class="nav-link active" id="v-pills-profile-tab" selected data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="fas fa-user"></i> &nbsp; Your Profile</a>
-        </div>
-      </div>
-      <div class="col-9 mt-3">
-        <div class="tab-content bg-light pb-5" id="v-pills-tabContent">
-          <div class="tab-pane fade show active p-3" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-            <img id="profilePic" src="https://icon-library.com/images/default-user-icon/default-user-icon-8.jpg" class="rounded-circle img-fluid">
-            &nbsp; &nbsp; <h5 class="d-inline-block"><?php echo $user; ?></span></h1> &nbsp;&nbsp;&nbsp;&nbsp;<small class="text-success"><i class="fas fa-pencil-alt"></i>&nbsp; Edit</small>&nbsp;&nbsp;&nbsp;&nbsp;<small class="text-danger"><i class="fas fa-times"></i>&nbsp; Remove</small></h5>
-
-            <br>
-            <br>
-            <hr>
-            <br>
-            <form>
-              <div class="row pb-5">
-                <div class="col">
-                  <p class="font-weight-bold d-inline-block">Display Name</p>
-                  <input type="text" class="form-control">
-                </div>
-                <div class="col">
-                  <p class="font-weight-bold d-inline-block">Full Name</p>
-                  <input type="text" class="form-control">
-                </div>
-              </div>                  
-                </div>
-            <hr>
-
-            <div class="delAccount pt-3">
-              <h5 class="text-dark">Delete Account</h5>
-              <a href="" class="text-muted float-right font-weight-bold">Delete Your Account</a>
-              <p class="text-muted">By deleting your account, you will lose all your data.</p>
-               </div>
-               <hr class="mt-4"><br><br>
-
-            <button type="button" class="btn btn-outline-primary float-right mt-3 mb-5" data-toggle="modal" data-target=".bd-example-modal-md">Save Changes</button>
-            <br>
-          </div>
-        </div>
-      </div>
-    </div>
+    <h1>Welcome, <?php echo $user_name ?></h1>
+    <p>Your email address is <?php echo $email; ?></p>
+    <a href="login.php">Logout</a>
 </div>
 
 
@@ -127,14 +92,12 @@ if (isset($_SESSION["user_name"])) {
       <div class="row">
         <div class="col-lg-4 col-md-6">
           <h5>About Us</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget est ac nulla facilisis tincidunt.</p>
+          <p>A Toys Store specialized in action figures and model kit.</p>
         </div>
         <div class="col-lg-4 col-md-6">
           <h5>Contact</h5>
           <ul class="list-unstyled">
-            <li>Address: 123 Main St, City, Country</li>
-            <li>Phone: +1 234 5678 910</li>
-            <li>Email: info@example.com</li>
+            <li>Email: AlbertToys@yahoo.com</li>
           </ul>
         </div>
         <div class="col-lg-4">
@@ -149,7 +112,7 @@ if (isset($_SESSION["user_name"])) {
       </div>
       <div class="row">
         <div class="col-12">
-          <p class="text-center">© 2023 Your Company. All rights reserved.</p>
+          <p class="text-center">© 2023 AlbertToys. All rights reserved.</p>
         </div>
       </div>
     </div>

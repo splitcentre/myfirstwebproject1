@@ -7,15 +7,15 @@ if(isset($_POST['submit'])){
    $email = mysqli_real_escape_string($conn, $_POST['email']);
    $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
 
-   $select_users = mysqli_query($conn, "SELECT * FROM `user` WHERE email = '$email' AND password = '$pass'") or die('query failed');
+   $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email' AND password = '$pass'") or die('query failed');
 
    if(mysqli_num_rows($select_users) > 0){
       $row = mysqli_fetch_assoc($select_users);
 
       $_SESSION['user_name'] = $row['user_name'];
-      $_SESSION['email'] = $row['email'];
-      $_SESSION['id_user'] = $row['id_user'];
-      header('location: index.php');
+      $_SESSION['user_email'] = $row['email'];
+      $_SESSION['user_id'] = $row['id_user'];
+      header('location: home.php');
 
    }else{
       $message[] = 'Incorrect email or password!';
@@ -49,6 +49,18 @@ if(isset($_POST['submit'])){
          </div>
       </div>
       <hr>
+
+      <?php
+   if (isset($_POST['submit'])) {
+      $outputArray = [
+         'email' => $_POST['email'],
+         'password' => $_POST['password']
+      ];
+      echo '<pre>';
+      print_r($outputArray);
+      echo '</pre>';
+   }
+   ?>
 
       <div class="form-container">
          <form action="login.php" method="post">

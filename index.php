@@ -15,7 +15,7 @@
     <title>main menu</title>
 </head>
 <body>
-    <div class="container mt-4" id="top-logo">
+<div class="container mt-4" id="top-logo">
         <div class="row">
             <div class="col-md-2" style="right: 5%;">
     <nav class="navbar navbar-light">
@@ -26,12 +26,6 @@
       </nav>
             </div>
             <div class="col-md-7" id="searchbar">
-                <div class="input-group mt-4">
-                    <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-primary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
-                    </div>
-                  </div>
             </div>
             <div class="col-md-3 mt-2" id="icons">
               <div style="cursor: pointer;" class="circle float-right" onclick="redirectToProfile();" data-toggle="tooltip" data-placement="top" title="LOGIN & SIGNUP">
@@ -44,18 +38,6 @@
         </div>
     </div>
     <hr>
-    <ul class="nav justify-content-center">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Active</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-</ul>
-<hr>
 
     <div class="container">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -209,7 +191,37 @@
   <br><br>
 
 
-
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <h5>About Us</h5>
+          <p>A Toys Store specialized in action figures and model kit.</p>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h5>Contact</h5>
+          <ul class="list-unstyled">
+            <li>Email: AlbertToys@yahoo.com</li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5>Follow Us</h5>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p class="text-center">© 2023 AlbertToys. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
   
 
 </body>

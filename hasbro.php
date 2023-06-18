@@ -78,4 +78,37 @@
     </div>
   </div>
 </div>
+
+<footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <h5>About Us</h5>
+          <p>A Toys Store specialized in action figures and model kit.</p>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h5>Contact</h5>
+          <ul class="list-unstyled">
+            <li>Email: AlbertToys@yahoo.com</li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5>Follow Us</h5>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p class="text-center">© 2023 AlbertToys. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+
 </body>

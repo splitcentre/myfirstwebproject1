@@ -14,23 +14,17 @@
     <title>Toys Store</title>
 </head>
 <body>
-    <div class="container mt-4" id="top-logo">
+<div class="container mt-4" id="top-logo">
         <div class="row">
             <div class="col-md-2" style="right: 5%;">
     <nav class="navbar navbar-light">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
           <img src="image/insignia.png"  width="30" height="30" alt="">
           
         </a>
       </nav>
             </div>
             <div class="col-md-7" id="searchbar">
-                <div class="input-group mt-3">
-                    <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-primary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
-                    </div>
-                  </div>
             </div>
             <div class="col-md-3 mt-2" id="icons">
               <div style="cursor: pointer;" class="circle float-right" onclick="redirectToProfile();" data-toggle="tooltip" data-placement="top" title="LOGIN & SIGNUP">
@@ -43,7 +37,7 @@
         </div>
     </div>
     <hr>
-    
+
     <div class="container" style="height: 30px;">
       <nav class="navbar navbar-expand-lg navbar-light" style="height: 30px;">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -53,13 +47,13 @@
           <div class="collapse navbar-collapse pl-4" id="navbarNav">
               <ul class="navbar-nav">
                   <li class="nav-item active">
-                      <a class="nav-link" href="bandai.html">Bandai <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="bandai.php">Bandai <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item active">
-                      <a class="nav-link" href="hasbro.html">Hasbro</a>
+                      <a class="nav-link" href="hasbro.php">Hasbro</a>
                   </li>
                   <li class="nav-item active">
-                      <a class="nav-link" href="other.html">Other</a>
+                      <a class="nav-link" href="other.php">Other</a>
                   </li>
               </ul>
           </div>
@@ -181,6 +175,36 @@
       </div>
 
 
-      
+<footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <h5>About Us</h5>
+          <p>A Toys Store specialized in action figures and model kit.</p>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h5>Contact</h5>
+          <ul class="list-unstyled">
+            <li>Email: AlbertToys@yahoo.com</li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5>Follow Us</h5>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p class="text-center">© 2023 AlbertToys. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+        
 
 </body>

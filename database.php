@@ -1,17 +1,13 @@
 <?php
+$host='localhost';
+$username='root';
+$password='';
+$database='ecom';
 
-$host = "localhost";
-$dbname = "ecom";
-$username = "root";
-$password = "";
+$conn = mysqli_connect($host, $username, $password, $database);
 
-$mysqli = new mysqli(hostname: $host,
-                     username: $username,
-                     password: $password,
-                     database: $dbname);
-                     
-if ($mysqli->connect_errno) {
-    die("Connection error: " . $mysqli->connect_error);
+if (!$conn) {
+    die('Failed to connect to the database: ' . mysqli_connect_error());
 }
 
-return $mysqli;
+?>
