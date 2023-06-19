@@ -1,3 +1,3 @@
 # myfirstwebproject1
 webpage unfinished
-help me my first project has been a clusterfuck
+this project is not perfect in anyway the some file cannot redirect to other file and some script never been use
